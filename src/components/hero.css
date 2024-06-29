@@ -1,0 +1,52 @@
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #111;
+    color: #fff;
+  }
+  
+  .hero-img {
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Ensure width and height are equal for a perfect circle */
+    border-radius: 50%; /* Make the image a perfect circle */
+    object-fit: cover; /* Ensure the image covers the entire circle */
+    animation: pulse 2s infinite alternate;
+    margin-top: 3rem;
+  }
+  
+  .bio {
+    margin-left: 2rem;
+  }
+  
+  .bio-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .bio-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    white-space: nowrap; /* Ensures the text types like a typewriter */
+    overflow: hidden; /* Ensures the text is hidden initially */
+    animation: typing 3s steps(40, end);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  

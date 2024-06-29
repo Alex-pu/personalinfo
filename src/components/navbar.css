@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #222;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .p{
+    font-family: 'Courier New', Courier, monospace;
+
+  }
+  .navbar h1 {
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+  }
+  
+  .navigation {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 3rem;
+  }
+  
+  .navigation li {
+    margin: 0;
+  }
+  
+  .navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navigation a:hover {
+    color: orange;
+  }
+  
