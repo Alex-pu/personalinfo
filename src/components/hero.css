@@ -1,52 +1,95 @@
+/* Add this to your existing CSS file */
+
 .hero {
-    display: flex;
-    align-items: center;
-    padding: 4rem 2rem;
-    background-color: #111;
-    color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #111;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.hero-img {
+  width: 200px; /* Adjust size as needed */
+  height: 200px; /* Ensure width and height are equal for a perfect circle */
+  border-radius: 50%; /* Make the image a perfect circle */
+  object-fit: cover; /* Ensure the image covers the entire circle */
+  animation: pulse 2s infinite alternate;
+  margin-top: 3rem;
+}
+
+.bio {
+  margin-left: 2rem;
+}
+
+.bio-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bio-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: nowrap; /* Ensures the text types like a typewriter */
+  overflow: hidden; /* Ensures the text is hidden initially */
+  animation: typing 3s steps(40, end);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  
-  .hero-img {
-    width: 200px; /* Adjust size as needed */
-    height: 200px; /* Ensure width and height are equal for a perfect circle */
-    border-radius: 50%; /* Make the image a perfect circle */
-    object-fit: cover; /* Ensure the image covers the entire circle */
-    animation: pulse 2s infinite alternate;
-    margin-top: 3rem;
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Add responsive styling */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
   }
   
   .bio {
-    margin-left: 2rem;
+    margin-left: 0;
+    margin-top: 2rem;
+    padding: 0 1rem; /* Add padding to prevent cutting off */
+    width: 100%; /* Make sure the bio takes full width */
+    box-sizing: border-box; /* Include padding and border in width */
   }
   
+  .hero-img {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem;
+  }
+  
+  .bio {
+    padding: 0 0.5rem; /* Adjust padding for smaller screens */
+    width: 100%; /* Ensure the bio takes full width */
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+
   .bio-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
   
   .bio-text {
-    font-size: 1rem;
-    line-height: 1.6;
-    white-space: nowrap; /* Ensures the text types like a typewriter */
-    overflow: hidden; /* Ensures the text is hidden initially */
-    animation: typing 3s steps(40, end);
+    font-size: 0.9rem;
   }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.1);
-    }
-  }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  
+}
